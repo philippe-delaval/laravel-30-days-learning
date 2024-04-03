@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Job extends Model {
+class Job extends Model
+{
     use HasFactory;
 
     protected $table = 'job_listings';
@@ -25,4 +26,3 @@ class Job extends Model {
         return $this->belongsToMany(Tag::class, foreignPivotKey: 'job_listing_id');
     }
 }
-
