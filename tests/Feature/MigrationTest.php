@@ -61,11 +61,10 @@ class MigrationTest extends TestCase
         $this->assertDatabaseHasTable('sessions');
     }
 
-
     /**
      * Check if a table exists in the database.
      *
-     * @param string $table
+     * @param  string  $table
      * @return void
      */
     protected function assertDatabaseHasTable($table)
@@ -76,12 +75,11 @@ class MigrationTest extends TestCase
     /**
      * Check if a table is missing in the database.
      *
-     * @param string $table
+     * @param  string  $table
      * @return void
      */
     protected function assertDatabaseMissingTable($table)
     {
         $this->assertFalse(\Schema::hasTable($table));
     }
-
 }
