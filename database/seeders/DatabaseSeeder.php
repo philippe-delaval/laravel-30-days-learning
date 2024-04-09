@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
             'email' => fake()->unique()->safeEmail(),
         ]);
 
-        $this->call([JobSeeder::class,]);
+        $this->call([JobSeeder::class]);
     }
 }
