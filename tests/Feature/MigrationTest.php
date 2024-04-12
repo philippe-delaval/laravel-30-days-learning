@@ -2,14 +2,11 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class MigrationTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
     public function tags_table_is_created_successfully()
     {
@@ -29,8 +26,6 @@ class MigrationTest extends TestCase
         // attempt to insert data that should fail or succeed based on the constraints.
     }
 
-    use RefreshDatabase;
-
     /**
      * Test if the users table is created successfully.
      *
@@ -39,6 +34,17 @@ class MigrationTest extends TestCase
     public function testUsersTableCreation()
     {
         $this->assertDatabaseHasTable('users');
+    }
+
+    /**
+     * Check if a table exists in the database.
+     *
+     * @param  string  $table
+     * @return void
+     */
+    protected function assertDatabaseHasTable($table)
+    {
+        $this->assertTrue(\Schema::hasTable($table));
     }
 
     /**
@@ -59,17 +65,6 @@ class MigrationTest extends TestCase
     public function testSessionsTableCreation()
     {
         $this->assertDatabaseHasTable('sessions');
-    }
-
-    /**
-     * Check if a table exists in the database.
-     *
-     * @param  string  $table
-     * @return void
-     */
-    protected function assertDatabaseHasTable($table)
-    {
-        $this->assertTrue(\Schema::hasTable($table));
     }
 
     /**
