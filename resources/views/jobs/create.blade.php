@@ -16,20 +16,20 @@
                         <x-form-label for="title">Title</x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input name="title" id="title" placeholder="CEO" required/>
+                            <x-form-input name="title" id="title" placeholder="CEO"/>
 
-                            <x-form-error name="title"/>
                         </div>
+                        <x-form-error name="title"/>
                     </x-form-field>
 
                     <x-form-field>
                         <x-form-label for="title">Title</x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input name="salary" id="salary" placeholder="$50,000 USD" required/>
+                            <x-form-input name="salary" id="salary" placeholder="$50,000 USD"/>
 
-                            <x-form-error name="salary"/>
                         </div>
+                        <x-form-error name="salary"/>
                     </x-form-field>
                 </div>
 
@@ -38,10 +38,7 @@
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
             <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-            <button type="submit"
-                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Save
-            </button>
+            <x-form-button>Save</x-form-button>
         </div>
     </form>
 
