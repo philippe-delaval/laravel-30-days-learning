@@ -55,7 +55,7 @@
 
                         <div class="mt-2">
                             <x-form-input name="password_confirmation" id="password_confirmation"
-                                          type="password_confirmation" required/>
+                                          type="password" required/>
                         </div>
 
                         <x-form-error name="password_confirmation"/>
