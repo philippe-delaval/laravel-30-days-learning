@@ -18,8 +18,8 @@ class JobCreationTest extends TestCase
     public function a_job_requires_a_title_and_salary()
     {
         $response = $this->post('/jobs', [
-            'title' => '',
-            'salary' => '',
+            'title' => 'string',
+            'salary' => 'string',
         ]);
 
         $response->assertSessionHasErrors(['title', 'salary']);
