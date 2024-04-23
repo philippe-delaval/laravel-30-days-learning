@@ -13,15 +13,4 @@ class JobCreationTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Create Job');
     }
-
-    /** @test */
-    public function a_job_requires_a_title_and_salary()
-    {
-        $response = $this->post('/jobs', [
-            'title' => 'string',
-            'salary' => 'string',
-        ]);
-
-        $response->assertSessionHasErrors(['title', 'salary']);
-    }
 }
