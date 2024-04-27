@@ -5,6 +5,15 @@ use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('test', function () {
+
+    dispatch(function () {
+        logger('Hello from the queue');
+    })->delay(5);
+
+    return 'Done';
+});
+
 Route::get('/', function () {
     return view('home');
 });
