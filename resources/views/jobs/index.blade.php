@@ -5,16 +5,11 @@
 
     <div class="space-y-4">
         @foreach($jobs as $job)
-            <a href="/jobs/{{ $job['id'] }}"
-               class="block px-4 py-6 border border-gray-200 rounded-lg">
-                @if($job->employer)
-                    <div class="font-bold text-blue-500 text-sm">{{ $job->employer->name }}</div>
-                @else
-                    <div class="font-bold text-blue-500 text-sm">Employer Unknown</div>
-                @endif
+            <a href="/jobs/{{ $job['id'] }}" class="block px-4 py-6 border border-gray-200 rounded-lg">
+                <div class="font-bold text-blue-500 text-sm">{{ $job->employer->name }}</div>
 
                 <div>
-                    <strong>{{ $job['title'] }}</strong> Pays {{ $job['salary'] }} per year.
+                    <strong class="text-laracasts">{{ $job['title'] }}</strong> Pays {{ $job['salary'] }} per year.
                 </div>
             </a>
         @endforeach
